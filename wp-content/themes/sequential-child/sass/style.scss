@@ -1,0 +1,49 @@
+/*
+ Theme Name:   Sequential Child
+ Theme URI:    http://example.com/twenty-fifteen-child/
+ Description:  Sequential Child
+ Author: Automattic
+ Author URI: https://wordpress.com/themes/
+ Template:     sequential
+ Version:      1.1.10
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  sequential-child
+ Tags:         Tags: blog, custom-colors, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, right-sidebar, rtl-language-support, sticky-post, theme-options, translation-ready, two-columns
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Sequential is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+
+*/
+
+// ABSTRACTS //
+
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+// BASE //
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+// COMPONENTS //
+
+// LAYOUT //
+
+@import "layout/footer";
+@import "layout/header";
+@import "layout/navigation";
+
+// PAGES //
+
+@import "pages/home";
