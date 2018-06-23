@@ -8,30 +8,41 @@
  */
 
 get_header(); ?>
+<?php $args = array(
+	'posts_per_page'   => 5,
+	'offset'           => 0,
+	'category'         => '',
+	'category_name'    => '',
+	'orderby'          => 'date',
+	'order'            => 'DESC',
+	'include'          => '',
+	'exclude'          => '',
+	'meta_key'         => '',
+	'meta_value'       => '',
+	'post_type'        => 'post',
+	'post_mime_type'   => '',
+	'post_parent'      => '',
+	'author'	   => '',
+	'author_name'	   => '',
+	'post_status'      => 'publish',
+	'suppress_filters' => true,
+	'fields'           => '',
+);
+?>
+<?php
+global $post;
 
-	<?php while ( have_posts() ) : the_post(); ?>
+$myposts = get_posts( $args );
+foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+<div class="slide">
+		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		<?php echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'alignleft' ) ); ?>
+	
+</div>
+<?php endforeach; 
+wp_reset_postdata();?>
 
-	<div class="hero">
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<div class="wrapper">
-				<?php sequential_post_thumbnail(); ?>
 
-				<div class="entry-written-content">
-					<?php
-						if ( 1 == get_theme_mod( 'sequential_title_front_page' ) ) {
-							the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header>' );
-						}
-					?>
-					<div class="entry-content">
-						<?php the_content(); ?>
-					</div>
-					<?php edit_post_link( esc_html__( 'Edit', 'sequential' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
-				</div><!-- .entry-written-content -->
-			</div><!-- .wrapper -->
-		</article><!-- .hentry -->
-	</div><!-- .hero -->
-
-	<?php endwhile; // end of the loop. ?>
 	<div id="primary" class="content-area full-width">
 		<div id="content" class="site-content" role="main">
 
