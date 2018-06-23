@@ -12,6 +12,43 @@ function my_theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 
+// ------------ Overrides sequential_body_classes function --------------//
+
+/**
+ * Adds custom classes to the array of body classes.
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function body_classes( $classes ) {
+	// Adds a class of group-blog to blogs with more than 1 published author.
+	if ( is_multi_author() ) {
+		$classes[] = 'group-blog';
+	}
+
+	// Adds a class of no-sidebar to blogs without a sidebar
+	if ( ! is_active_sidebar( 'sidebar-1' ) || is_post_type_archive( 'jetpack-testimonial' ) ) {
+		$classes[] = 'no-sidebar';
+	}
+
+	// Adds a class of show-tagline to blogs depending on the theme options.
+	if ( 1 == get_theme_mod( 'sequential_tagline' ) ) {
+		$classes[] = 'show-tagline';
+	}
+
+	// Adds a class of full-width-layout to blogs depending on the page template.
+	if ( is_page_template( 'page-templates/front-page.php' ) || is_page_template( 'page-templates/grid-page.php' ) || is_page_template( 'page-templates/full-width-page.php' ) || is_404() || is_post_type_archive( 'jetpack-testimonial' ) || is_page_template( 'templates/front.php' ) || is_page_template( 'templates/gallery.php' ) ) {
+		$classes[] = 'full-width-layout';
+	}
+
+	// Adds a class of extra-spacing to blogs depending on the page template.
+	if ( is_page_template( 'page-templates/grid-page.php' ) || is_page_template( 'page-templates/full-width-page.php' ) || is_404() ) {
+		$classes[] = 'extra-spacing';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'body_classes' , 25);
 
 
 
