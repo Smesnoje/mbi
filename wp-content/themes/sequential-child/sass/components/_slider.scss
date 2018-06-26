@@ -1,0 +1,106 @@
+.slider-wrapper{
+    width: 75vw;
+    margin: auto;
+    position: relative;
+
+    .arr {
+        display: block;
+        width: 30px;
+        height: 100%;
+        z-index: 100;
+        position: absolute;
+        content: "";
+
+        &:before {
+            content: "";
+            display: block;
+            height: 30px;
+            width: 30px;
+            transform: scale(1, 5);
+            position: absolute;
+            top: 45%;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .prev-slide{
+        background-color: rgba($color-grey-dark, .5);
+
+        &:before {
+            @extend .icon-prev;
+        }
+
+        &:hover {
+            background-color: rgba($color-primary, .5);
+        }
+    }
+
+    .next-slide{
+        right: 0;
+        transform: translateX(-50%);
+
+        &:before {
+            @extend .icon-next;
+        }
+    }
+
+}
+
+.slider {
+
+}
+
+.slider-content {
+    height: 65vh;
+    position: relative;
+    display: flex!important;
+
+    &_right {
+        width: 33.33333%;
+        padding: 10px 50px 20px 50px;
+
+        &--title {
+            display: flex;
+            text-transform: uppercase;
+            line-height: .8;
+
+            &:before {
+                content: "";
+                display: block;
+                height: 20px;
+                width: 20px;
+                background-color: $color-secondary;
+                margin-right: 20px;
+            }
+        }
+
+        &--text {
+            border-bottom: 1px solid $color-white;
+            margin-bottom: 40px;
+        }
+
+        &--link {
+            border: 2px solid $color-white;
+            border-radius: 5px;
+            padding: 10px;
+            text-decoration: none;
+
+            &:hover {
+                background-color: $color-white;
+                border-bottom-color: $color-white;
+            }
+
+            &:focus {
+                border-bottom-color: $color-white;
+            }
+        }
+    }
+
+    &_left {
+        width: 65.6%;
+        background-size: cover;
+    }
+}

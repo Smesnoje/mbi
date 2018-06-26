@@ -29,18 +29,67 @@ get_header(); ?>
 	'fields'           => '',
 );
 ?>
-<?php
-global $post;
 
-$myposts = get_posts( $args );
-foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-<div class="slide">
-		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-		<?php echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'alignleft' ) ); ?>
-	
-</div>
-<?php endforeach; 
-wp_reset_postdata();?>
+<?php
+get_header(); ?>
+
+  <script type="text/javascript">
+
+  </script>
+  <script type="text/javascript">
+    (function($) {
+	$(document).ready(function(){
+      $('.slider').slick({
+		arrows: true,
+		prevArrow: $ ('.prev-slide'),
+		nextArrow: $ ('.next-slide'),
+  		infinite: true,
+  		speed: 300,
+  		slidesToShow: 1,
+  		adaptiveHeight: false
+      });
+    });
+    })(jQuery);
+</script>
+
+	<div class="hero">
+		<div class="slider-wrapper">
+				<span class="arr prev-slide"></span>
+				<span class="arr next-slide"></span>
+			<div class="slider">
+				<?php
+				global $post;
+
+				$myposts = get_posts( $args );
+				foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+				<div class="slider-content">
+
+					<div class="slider-content_left" style="background-image: url(<?php the_post_thumbnail_url( $size ); ?> )">
+
+					</div>
+
+					<div class="slider-content_right">
+
+						<h2 class="slider-content_right--title">
+							<?php the_title(); ?>
+						</h2>
+
+						<div class="slider-content_right--text">
+							<?php the_content(); ?>					
+						</div>
+
+						<a href="<?php the_permalink(); ?>" class="slider-content_right--link">
+							Take a look
+						</a>
+					</div>
+
+				</div>
+
+				<?php endforeach; 
+				wp_reset_postdata();?>
+			</div><!-- .slider -->
+		</div><!-- .slider-wrapper -->
+	</div><!-- .hero -->
 
 
 	<div id="primary" class="content-area full-width">

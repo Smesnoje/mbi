@@ -29,6 +29,10 @@ and Blueprint http://www.blueprintcss.org/
 @import "abstracts/mixins";
 @import "abstracts/variables";
 
+// FONT //
+
+@import "font/icon-font";
+
 // BASE //
 
 @import "base/animations";
@@ -37,6 +41,8 @@ and Blueprint http://www.blueprintcss.org/
 @import "base/utilities";
 
 // COMPONENTS //
+
+@import "components/slider";
 
 // LAYOUT //
 
