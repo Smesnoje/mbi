@@ -84,13 +84,56 @@ function wc_add_to_cart_message_filter($message, $product_id = null) {
                     esc_html( $added_text ),
                     esc_url( wc_get_page_permalink( 'checkout' ) ),
                     esc_html__( 'Na kasu', 'woocommerce' ),
-                    esc_url( wc_get_page_permalink( 'cart' ) ),
-                    esc_html__( 'Korpa', 'woocommerce' ));
+                    esc_url( wc_get_page_permalink( 'shop' ) ),
+                    esc_html__( 'Nastavi kupovinu', 'woocommerce' ));
 
     return $message;
 }
 
 
+
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+
+// Our hooked in function - $fields is passed via the filter!
+function custom_override_checkout_fields( $fields ) {
+	// First name edited
+	$fields['billing']['billing_first_name']['label'] = 'Ime';
+	$fields['billing']['billing_first_name']['placeholder'] = '';
+	$fields['billing']['billing_first_name']['required'] = false;
+	// Last name edited
+	$fields['billing']['billing_last_name']['label'] = 'Prezime';
+	$fields['billing']['billing_last_name']['placeholder'] = '';
+	$fields['billing']['billing_last_name']['required'] = false;
+	// Country field rename
+	$fields['billing']['billing_country']['label'] = 'Država';
+	//Removes state field
+	unset($fields['billing']['billing_state']);
+	// Phone field renamed
+	$fields['billing']['billing_phone']['label'] = 'Telefon';
+	// Email field edited
+	$fields['billing']['billing_email']['label'] = 'E-mail';
+	$fields['billing']['billing_email']['required'] = false;
+	// Order comment edited
+	$fields['order']['order_comments']['label'] = 'Napomena';
+	$fields['order']['order_comments']['placeholder'] = 'Ovde možete napisati vašu napomenu ili zahtev.';
+
+     return $fields;
+}
+
+add_filter( 'woocommerce_default_address_fields' , 'wpse_120741_wc_def_state_label' );
+function wpse_120741_wc_def_state_label( $address_fields ) {
+	$address_fields['address_1']['label'] = 'Adresa';
+	$address_fields['address_1']['placeholder'] = '';
+	$address_fields['address_1']['required'] = true;
+	// Renames city field
+	$address_fields['city']['label'] = 'Grad';
+	$address_fields['city']['placeholder'] = '';
+	// Renames postcode field
+	$address_fields['postcode']['label'] = 'Poštanski broj';
+	$address_fields['postcode']['placeholder'] = '';
+	$address_fields['postcode']['required'] = false;
+     return $address_fields;
+}
 
 
 
