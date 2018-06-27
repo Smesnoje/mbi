@@ -75,10 +75,27 @@ get_header(); ?>
 						</h2>
 
 						<div class="slider-content_right--text">
-							<?php the_content(); ?>					
+							<?php the_excerpt(); ?>					
 						</div>
+						<?php
 
-						<a href="<?php the_permalink(); ?>" class="slider-content_right--link">
+							// Links
+							$field = get_field_object('existing_or_custom_link');
+							$value = $field['value'];
+							
+
+						?>
+						
+						<a href="
+						<?php 
+						if ($value == "Existing"){
+						 the_field('page');
+						}
+						elseif($value == "Custom") {
+							the_field('link');
+						}
+						?>
+						" class="slider-content_right--link">
 							Take a look
 						</a>
 					</div>
