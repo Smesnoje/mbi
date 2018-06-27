@@ -119,7 +119,7 @@ function custom_override_checkout_fields( $fields ) {
 
      return $fields;
 }
-
+// Other solution for checkout fields when the first one doesn't work (Woocommerce documentation)
 add_filter( 'woocommerce_default_address_fields' , 'wpse_120741_wc_def_state_label' );
 function wpse_120741_wc_def_state_label( $address_fields ) {
 	$address_fields['address_1']['label'] = 'Adresa';
@@ -133,6 +133,13 @@ function wpse_120741_wc_def_state_label( $address_fields ) {
 	$address_fields['postcode']['placeholder'] = '';
 	$address_fields['postcode']['required'] = false;
      return $address_fields;
+}
+
+// Renames Place Order button
+add_filter( 'woocommerce_order_button_text', 'woo_custom_order_button_text' ); 
+
+function woo_custom_order_button_text() {
+    return __( 'Poruči', 'woocommerce' ); 
 }
 
 
