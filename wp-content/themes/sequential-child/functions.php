@@ -141,16 +141,14 @@ add_filter( 'woocommerce_order_button_text', 'woo_custom_order_button_text' );
 function woo_custom_order_button_text() {
     return __( 'Poruči', 'woocommerce' ); 
 }
+// Proceed to checkout rename
+function woocommerce_button_proceed_to_checkout() {
+	$checkout_url = WC()->cart->get_checkout_url();
 
-
-
-
-
-
-
-
-
-
+	?>
+	<a href="<?php echo $checkout_url; ?>" class="checkout-button button alt wc-forward"><?php _e( 'Nastavi kupovinu' ); ?></a>
+	<?php
+}
 
 
 

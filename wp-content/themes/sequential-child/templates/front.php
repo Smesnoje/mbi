@@ -33,9 +33,7 @@ get_header(); ?>
 <?php
 get_header(); ?>
 
-  <script type="text/javascript">
-
-  </script>
+  <script type="text/javascript" src="wp-content/themes/sequential-child/js/main.js"></script>
   <script type="text/javascript">
     (function($) {
 	$(document).ready(function(){
