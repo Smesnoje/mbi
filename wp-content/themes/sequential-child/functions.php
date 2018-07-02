@@ -146,9 +146,35 @@ function woocommerce_button_proceed_to_checkout() {
 	$checkout_url = WC()->cart->get_checkout_url();
 
 	?>
-	<a href="<?php echo $checkout_url; ?>" class="checkout-button button alt wc-forward"><?php _e( 'Nastavi kupovinu' ); ?></a>
+	<a href="<?php echo $checkout_url; ?>" class="checkout-button button alt wc-forward"><?php _e( 'Na kasu' ); ?></a>
 	<?php
 }
+
+
+// Section post type
+function create_posttype() {
+ 
+    register_post_type( 'section',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Sections' ),
+				'singular_name' => __( 'Section' ),
+			),
+			'supports' => array( 'title', 'editor','thumbnail' ),
+            'public' => true,
+            'has_archive' => true,
+			'rewrite' => array('slug' => 'movies'),
+			
+			
+		)
+		
+    );
+}
+
+// Hooking up our function to theme setup
+add_action( 'init', 'create_posttype' );
+
 
 
 

@@ -61,27 +61,19 @@ get_header(); ?>
 				$myposts = get_posts( $args );
 				foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 				<div class="slider-content">
-
 					<div class="slider-content_left" style="background-image: url(<?php the_post_thumbnail_url( $size ); ?> )">
-
 					</div>
-
 					<div class="slider-content_right">
-
 						<h2 class="slider-content_right--title">
 							<?php the_title(); ?>
 						</h2>
-
 						<div class="slider-content_right--text">
 							<?php the_excerpt(); ?>					
 						</div>
 						<?php
-
 							// Links
 							$field = get_field_object('existing_or_custom_link');
 							$value = $field['value'];
-							
-
 						?>
 						
 						<a href="
@@ -114,7 +106,31 @@ get_header(); ?>
 				rewind_posts();
 				sequential_featured_pages();
 			?>
+			<?php 
+			// list sections
+				$posts = get_posts(array(
+					'posts_per_page'	=> -1,
+					'post_type'			=> 'section',
+					'meta_query' => array( array(
+						'key'     => 'page_seciton',
+						'value'   => 'Front',
+						'compare' => 'LIKE',
+					  ))
+					
+				));
+			if( $posts ): ?>
+				<?php foreach( $posts as $post ): 
+					setup_postdata( $post );
+			
+					?>
+						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						<?php the_content(); ?>
+						<?php the_post_thumbnail_url( $size ); ?>
+				<?php endforeach; ?>
+	
+	<?php wp_reset_postdata(); ?>
 
+<?php endif; ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
