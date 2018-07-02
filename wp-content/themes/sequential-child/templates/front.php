@@ -77,14 +77,16 @@ get_header(); ?>
 						?>
 						
 						<a href="
-						<?php 
-						if ($value == "Existing"){
-						 the_field('page');
-						}
-						elseif($value == "Custom") {
-							the_field('link');
-						}
-						?>
+							<?php 
+							if ($value == "Existing"){
+						 		the_field('page');
+							}
+
+							elseif($value == "Custom") {
+								the_field('link');
+							}
+
+							?>
 						" class="slider-content_right--link">
 							Take a look
 						</a>
@@ -100,8 +102,8 @@ get_header(); ?>
 
 
 	<div id="primary" class="content-area full-width">
-		<div id="content" class="site-content" role="main">
-
+		<div id="content" class="site-content front-sections" role="main">
+			<h1 class="heading-primary">Neki novi content</h1>
 			<?php
 				rewind_posts();
 				sequential_featured_pages();
@@ -123,9 +125,18 @@ get_header(); ?>
 					setup_postdata( $post );
 			
 					?>
-						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-						<?php the_content(); ?>
-						<?php the_post_thumbnail_url( $size ); ?>
+					<div class="section" >
+						<div class="section_image "style="background-image: url(<?php the_post_thumbnail_url( $size ); ?> )"></div>
+						<div class="section_content">
+							<div class="section_text">
+								<a href="<?php the_permalink(); ?>" class="section_title"> 
+									<?php the_title(); ?>
+								</a>
+								<?php the_content(); ?>
+							</div>
+						</div>
+					</div>
+
 				<?php endforeach; ?>
 	
 	<?php wp_reset_postdata(); ?>

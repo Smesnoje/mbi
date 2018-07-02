@@ -1,11 +1,14 @@
 .slider-wrapper{
-    width: 75vw;
+    width: 123rem;
     margin: auto;
     position: relative;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); 
+
+
 
     .arr {
         display: block;
-        width: 30px;
+        width: 3rem;
         height: 100%;
         z-index: 100;
         position: absolute;
@@ -14,8 +17,8 @@
         &:before {
             content: "";
             display: block;
-            height: 30px;
-            width: 30px;
+            height: 3rem;
+            width: 3rem;
             transform: scale(1, 5);
             position: absolute;
             top: 45%;
@@ -40,7 +43,7 @@
 
     .next-slide{
         right: 0;
-        transform: translateX(-50%);
+        // transform: translateX(-50%);
 
         &:before {
             @extend .icon-next;
@@ -49,18 +52,15 @@
 
 }
 
-.slider {
-
-}
-
 .slider-content {
-    height: 65vh;
+    height: 50vh;
     position: relative;
     display: flex!important;
 
     &_right {
-        width: 33.33333%;
-        padding: 10px 50px 20px 50px;
+        width: 34.33333%;
+        padding: 5rem 5rem 2rem 5rem;
+        background-color: rgba($color-primary-light, .8);
 
         &--title {
             display: flex;
@@ -70,22 +70,25 @@
             &:before {
                 content: "";
                 display: block;
-                height: 20px;
-                width: 20px;
+                height: 2rem;
+                width: 2rem;
                 background-color: $color-secondary;
-                margin-right: 20px;
+                margin-right: 2rem;
             }
         }
 
         &--text {
             border-bottom: 1px solid $color-white;
-            margin-bottom: 40px;
+            margin-bottom: 4rem;
+            font-size: $default-font-size;
+            line-height: 1.1;
         }
 
         &--link {
+            font-size: 1.6rem;
             border: 2px solid $color-white;
-            border-radius: 5px;
-            padding: 10px;
+            border-radius: .5rem;
+            padding: 1rem;
             text-decoration: none;
 
             &:hover {
