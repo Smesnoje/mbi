@@ -33,7 +33,9 @@ get_header(); ?>
 <?php
 get_header(); ?>
 
+
   <script type="text/javascript" src="wp-content/themes/sequential-child/js/main.js"></script>
+  <script type="text/javascript" src="wp-content/themes/sequential-child/js/aos.js"></script>
   <script type="text/javascript">
     (function($) {
 	$(document).ready(function(){
@@ -103,7 +105,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area full-width">
 		<div id="content" class="site-content front-sections" role="main">
-			<h1 class="heading-primary">Neki novi content</h1>
+			<h1 class="heading_primary">Neki novi content</h1>
 			<?php
 				rewind_posts();
 				sequential_featured_pages();
@@ -125,7 +127,7 @@ get_header(); ?>
 					setup_postdata( $post );
 			
 					?>
-					<div class="section" >
+					<div class="section" data-aos="fade-right" >
 						<div class="section_image "style="background-image: url(<?php the_post_thumbnail_url( $size ); ?> )"></div>
 						<div class="section_content">
 							<div class="section_text">

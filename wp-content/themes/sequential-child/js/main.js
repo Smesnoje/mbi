@@ -1,1 +1,2 @@
-alert('kurac');
+// alert('kurac');
+

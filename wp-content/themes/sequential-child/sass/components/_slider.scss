@@ -31,6 +31,7 @@
 
     .prev-slide{
         background-color: rgba($color-grey-dark, .5);
+        transition: all .3s;
 
         &:before {
             @extend .icon-prev;

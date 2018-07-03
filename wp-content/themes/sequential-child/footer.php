@@ -38,6 +38,9 @@
 
 
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<!-- <script type="text/javascript" src="wp-content/themes/sequential-child/node_modules/aos/dist/aos.js"></script> -->
+<script type="text/javascript" src="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.js"></script>
+
 
 </body>
 </html>

@@ -1,5 +1,6 @@
 .hero {
     padding-bottom: 10rem;
+    background-image: linear-gradient(to right, $color-primary, $color-primary-dark);
 
     &:after {
         content: "";
@@ -16,7 +17,7 @@
 
 }
 
-.heading-primary {
+.heading_primary {
     font-size: 3.4rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -26,6 +27,7 @@
     -webkit-background-clip: text;
     background-image: linear-gradient(to right, $color-secondary, $color-secondary-dark);
     color: transparent;
+    text-align: center;
 }
 
 .section {
@@ -81,7 +83,7 @@
         background-size: cover;
     }
 
-    &:nth-child(even) {
+    &:nth-child(odd) {
         
         .section_content {
             height: 80%;

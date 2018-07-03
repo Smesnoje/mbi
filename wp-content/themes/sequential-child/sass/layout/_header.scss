@@ -1,0 +1,12 @@
+.site-header {
+    background-color: $color-primary-dark;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);  
+
+    .menu-primary {
+        
+        li {
+            border-bottom: none;
+            text-transform: uppercase;
+        }
+    }
+}
