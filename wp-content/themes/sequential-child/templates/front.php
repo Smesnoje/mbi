@@ -123,11 +123,13 @@ get_header(); ?>
 					
 				));
 			if( $posts ): ?>
+			<?php $count = 0 ?>
 				<?php foreach( $posts as $post ): 
+					$count++;
 					setup_postdata( $post );
 			
 					?>
-					<div class="section" data-aos="fade-right" >
+					<div class="section" data-aos="<?php if ($count % 2 !== 0):?><?php print('fade-right');?><?php else: ?><?php print('fade-left');?><?php endif; ?>">
 						<div class="section_image "style="background-image: url(<?php the_post_thumbnail_url( $size ); ?> )"></div>
 						<div class="section_content">
 							<div class="section_text">
