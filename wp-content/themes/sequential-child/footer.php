@@ -27,9 +27,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'sequential' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'sequential' ), 'WordPress' ); ?></a>
-			<span class="sep"> &mdash; </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'sequential' ), 'Sequential', '<a href="http://wordpress.com/themes/sequential/" rel="designer">WordPress.com</a>' ); ?>
+			<p>Copyright</p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

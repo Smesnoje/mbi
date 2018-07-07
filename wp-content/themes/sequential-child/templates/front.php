@@ -51,7 +51,6 @@ get_header(); ?>
     });
     })(jQuery);
 </script>
-
 	<div class="hero">
 		<div class="slider-wrapper">
 				<span class="arr prev-slide"></span>

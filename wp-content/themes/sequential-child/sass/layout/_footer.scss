@@ -1,0 +1,49 @@
+.menu-footer {
+
+    li::before {
+        content: "";
+        display: block;
+        height: .3rem;
+        width: 100%;
+        background-color: $color-white;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: scaleX(0);
+        transition: transform .2s,
+                    height .4s cubic-bezier(1,0,0,1) .2s;
+
+    }
+
+    li:hover::before {
+        transform: scaleX(1);
+        height: 100%;
+    }
+
+    li:hover {
+        
+        a {
+            color: $color-primary;
+        }
+    }
+        
+    li {
+        position: relative;
+        border-bottom:none;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0 1rem;
+    }
+
+    a {
+        border-bottom:none;
+        z-index: 100;
+        position: relative;
+    }
+}
+
+.site-info {
+    p {
+        margin: 0;
+    }
+}

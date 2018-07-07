@@ -14,7 +14,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<!-- <link rel="stylesheet" type="text/css" href="wp-content/themes/sequential-child/node_modules/aos/dist/aos.css" /> -->
+<link rel="stylesheet" href="wp-content/themes/sequential-child/icon-font/icons.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.css">
 
 
@@ -39,7 +39,7 @@
 		<div class="wrapper">
 			<div class="site-branding">
 				<?php sequential_the_site_logo(); ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><i class="icon-001-garden"></i><?php bloginfo( 'name' ); ?></a></h1>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</div>
 
