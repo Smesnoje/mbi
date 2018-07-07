@@ -27,7 +27,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<p>Copyright</p>
+			<p>All rights reserved. <strong>Maston Bi</strong> 2002- <?php echo date("Y");?></p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
