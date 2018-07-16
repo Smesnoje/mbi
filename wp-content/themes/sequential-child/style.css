@@ -311,3 +311,52 @@ h4 {
   .section:nth-child(odd) .section_text {
     float: right;
     padding-left: 2rem; }
+
+.page-template-about .content-area {
+  width: 50vw !important; }
+
+.page-template-about .entry-meta {
+  visibility: hidden !important;
+  height: 0 !important; }
+
+.page-template-about article {
+  border: 1px solid rgba(51, 51, 51, 0.2);
+  border-radius: 5px;
+  padding: 3.5rem 2rem 1rem 2rem;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); }
+  .page-template-about article h3 {
+    text-align: center;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to right, #83c2bc, #33847B); }
+  .page-template-about article p {
+    line-height: 1;
+    text-align: center; }
+  .page-template-about article pre {
+    padding: 0 1.5rem; }
+  .page-template-about article img {
+    width: 100%;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); }
+
+.page-template-about .entry-header {
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background: #fff;
+  padding: 0 2rem; }
+
+.page-template-about .entry-title {
+  text-align: center;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #83c2bc, #33847B); }
+
+.page-template-about .entry-content {
+  line-height: 1; }
+
+.page-template-about .entry-footer {
+  display: none; }
