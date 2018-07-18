@@ -128,6 +128,10 @@ function init_custom_gateway_class(){
 
             ?>
             <div id="custom_input">
+            <p class="form-row form-row-wide">
+                    <label for="address" class=""><?php _e('Adresa *', $this->domain); ?></label>
+                    <input type="text" class="" name="address" id="address" placeholder="" value="">
+                </p>
                 <p class="form-row form-row-wide">
                     <label for="zipcode" class=""><?php _e('Poštanski broj *', $this->domain); ?></label>
                     <input type="text" class="" name="zipcode" id="zipcode" placeholder="" value="">
@@ -136,10 +140,7 @@ function init_custom_gateway_class(){
                     <label for="city" class=""><?php _e('Grad *', $this->domain); ?></label>
                     <input type="text" class="" name="city" id="city" placeholder="" value="">
                 </p>
-                <p class="form-row form-row-wide">
-                    <label for="address" class=""><?php _e('Adresa *', $this->domain); ?></label>
-                    <input type="text" class="" name="address" id="address" placeholder="" value="">
-                </p>
+               
             </div>
             <?php
         }
@@ -237,8 +238,8 @@ function custom_checkout_field_display_admin_order_meta($order){
     $city = get_post_meta( $order->id, 'city', true );
     $address = get_post_meta( $order->id, 'address', true );
 
-
+    echo '<p><strong>'.__( 'Adresa' ).':</strong> ' . $address . '</p>';
     echo '<p><strong>'.__( 'Poštanski broj' ).':</strong> ' . $zipcode . '</p>';
     echo '<p><strong>'.__( 'Grad' ).':</strong> ' . $city . '</p>';
-    echo '<p><strong>'.__( 'Adresa' ).':</strong> ' . $address . '</p>';
+  
 }

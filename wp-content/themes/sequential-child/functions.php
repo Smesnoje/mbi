@@ -99,11 +99,11 @@ function custom_override_checkout_fields( $fields ) {
 	// First name edited
 	$fields['billing']['billing_first_name']['label'] = 'Ime';
 	$fields['billing']['billing_first_name']['placeholder'] = '';
-	$fields['billing']['billing_first_name']['required'] = false;
+	$fields['billing']['billing_first_name']['required'] = true;
 	// Last name edited
 	$fields['billing']['billing_last_name']['label'] = 'Prezime';
 	$fields['billing']['billing_last_name']['placeholder'] = '';
-	$fields['billing']['billing_last_name']['required'] = false;
+	$fields['billing']['billing_last_name']['required'] = true;
 	// Country field rename
 	$fields['billing']['billing_country']['label'] = 'Država';
 	//Removes fields that are not needed
