@@ -106,10 +106,12 @@ function custom_override_checkout_fields( $fields ) {
 	$fields['billing']['billing_last_name']['required'] = false;
 	// Country field rename
 	$fields['billing']['billing_country']['label'] = 'Država';
-	//Removes state field
+	//Removes fields that are not needed
 	unset($fields['billing']['billing_state']);
-	// Phone field renamed
 	$fields['billing']['billing_phone']['label'] = 'Telefon';
+	$fields['billing']['billing_phone']['placeholder'] = '';
+	$fields['billing']['billing_phone']['required'] = true;
+
 	// Email field edited
 	$fields['billing']['billing_email']['label'] = 'E-mail';
 	$fields['billing']['billing_email']['required'] = false;
@@ -122,16 +124,11 @@ function custom_override_checkout_fields( $fields ) {
 // Other solution for checkout fields when the first one doesn't work (Woocommerce documentation)
 add_filter( 'woocommerce_default_address_fields' , 'wpse_120741_wc_def_state_label' );
 function wpse_120741_wc_def_state_label( $address_fields ) {
-	$address_fields['address_1']['label'] = 'Adresa';
-	$address_fields['address_1']['placeholder'] = '';
-	$address_fields['address_1']['required'] = true;
+	unset($address_fields['address_1']);
 	// Renames city field
-	$address_fields['city']['label'] = 'Grad';
-	$address_fields['city']['placeholder'] = '';
+	unset($address_fields['city']);
 	// Renames postcode field
-	$address_fields['postcode']['label'] = 'Poštanski broj';
-	$address_fields['postcode']['placeholder'] = '';
-	$address_fields['postcode']['required'] = false;
+	unset($address_fields['postcode']);
      return $address_fields;
 }
 
@@ -164,7 +161,7 @@ function create_posttype() {
 			'supports' => array( 'title', 'editor','thumbnail' ),
             'public' => true,
             'has_archive' => true,
-			'rewrite' => array('slug' => 'movies'),
+			'rewrite' => array('slug' => 'sections'),
 			
 			
 		)

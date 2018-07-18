@@ -129,12 +129,16 @@ function init_custom_gateway_class(){
             ?>
             <div id="custom_input">
                 <p class="form-row form-row-wide">
-                    <label for="mobile" class=""><?php _e('Mobile Number', $this->domain); ?></label>
-                    <input type="text" class="" name="mobile" id="mobile" placeholder="" value="">
+                    <label for="zipcode" class=""><?php _e('Poštanski broj *', $this->domain); ?></label>
+                    <input type="text" class="" name="zipcode" id="zipcode" placeholder="" value="">
                 </p>
                 <p class="form-row form-row-wide">
-                    <label for="zipcode" class=""><?php _e('Zipcode', $this->domain); ?></label>
-                    <input type="text" class="" name="zipcode" id="zipcode" placeholder="" value="">
+                    <label for="city" class=""><?php _e('Grad *', $this->domain); ?></label>
+                    <input type="text" class="" name="city" id="city" placeholder="" value="">
+                </p>
+                <p class="form-row form-row-wide">
+                    <label for="address" class=""><?php _e('Adresa *', $this->domain); ?></label>
+                    <input type="text" class="" name="address" id="address" placeholder="" value="">
                 </p>
             </div>
             <?php
@@ -182,14 +186,21 @@ function process_custom_payment(){
     if($_POST['payment_method'] != 'custom')
         return;
 
-    if( !isset($_POST['mobile']) || empty($_POST['mobile']) )
-        wc_add_notice( __( 'Please add your mobile number', $this->domain ), 'error' );
-
-
     if( !isset($_POST['zipcode']) || empty($_POST['zipcode']) )
-    wc_add_notice( __( 'Please add your zipcode', $this->domain ), 'error' );
+    
+    wc_add_notice( __( 'Poštanski broj je obavezan.' ), 'error' );
+    else {
+        if(!is_numeric($_POST['zipcode']) ){
+            wc_add_notice( __( 'Poštanski broj mora biti u dobrom formatu.' ), 'error' );
+    
+    }
+    }
 
+    if( !isset($_POST['city']) || empty($_POST['city']) )
+    wc_add_notice( __( ' Grad je obavezan.'), 'error' );
 
+    if( !isset($_POST['address']) || empty($_POST['address']) )
+    wc_add_notice( __( 'Adresa je obavezna.' ), 'error' );
 
 }
 
@@ -207,8 +218,9 @@ function custom_payment_update_order_meta( $order_id ) {
     // echo "</pre>";
     // exit();
 
-    update_post_meta( $order_id, 'mobile', $_POST['mobile'] );
+    update_post_meta( $order_id, 'address', $_POST['address'] );
     update_post_meta( $order_id, 'zipcode', $_POST['zipcode'] );
+    update_post_meta( $order_id, 'city', $_POST['city'] );
 }
 
 /**
@@ -220,9 +232,13 @@ function custom_checkout_field_display_admin_order_meta($order){
     if($method != 'custom')
         return;
 
-    $mobile = get_post_meta( $order->id, 'mobile', true );
-    $zipcode = get_post_meta( $order->id, 'zipcode', true );
 
-    echo '<p><strong>'.__( 'Mobile Number' ).':</strong> ' . $mobile . '</p>';
-    echo '<p><strong>'.__( 'Zip code' ).':</strong> ' . $zipcode . '</p>';
+    $zipcode = get_post_meta( $order->id, 'zipcode', true );
+    $city = get_post_meta( $order->id, 'city', true );
+    $address = get_post_meta( $order->id, 'address', true );
+
+
+    echo '<p><strong>'.__( 'Poštanski broj' ).':</strong> ' . $zipcode . '</p>';
+    echo '<p><strong>'.__( 'Grad' ).':</strong> ' . $city . '</p>';
+    echo '<p><strong>'.__( 'Adresa' ).':</strong> ' . $address . '</p>';
 }
