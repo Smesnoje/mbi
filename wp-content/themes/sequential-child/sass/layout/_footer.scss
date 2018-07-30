@@ -43,7 +43,20 @@
 }
 
 .site-info {
+
     p {
         margin: 0;
+    }
+}
+
+.footer-navigation {
+    background: #424242;
+}
+
+.site-footer {
+    background: #424242;
+
+    &::before {
+        background: rgba($color-black, .25);
     }
 }

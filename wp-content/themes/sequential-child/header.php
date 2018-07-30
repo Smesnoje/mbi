@@ -44,8 +44,7 @@
 			</div>
 
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-expanded="false" ><span class="screen-reader-text"><?php esc_html_e( 'Menu', 'sequential' ); ?></span></button>
+				<nav id="site-navigation" class="main-navigation main-navigation-res" role="navigation">
 					<?php
 						wp_nav_menu( array(
 							'theme_location'  => 'primary',
@@ -53,7 +52,33 @@
 							'menu_class'      => 'clear nav-menu',
 						) );
 					?>
+
+			<div class="navigation"> 	
+            	<input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+           		<label for="navi-toggle" class="navigation__button">
+                	<span class="navigation__icon">&nbsp;</span>
+				</label>
+				
+            	<div class="navigation__background">
+                	&nbsp;
+				</div>
+		
+            	<nav class="navigation__nav">
+                	<ul class="navigation__list">
+						<?php
+							wp_nav_menu( array(
+								'theme_location'  => 'primary',
+								'container_class' => 'menu-primary-res',
+								'menu_class'      => 'clear nav-menu',
+							) );
+						?>
+                	</ul>
+            	</nav>
+        	</div><!-- navigation-responisve -->
 				</nav><!-- #site-navigation -->
+
+
+				
 			<?php endif; ?>
 
 			<?php if ( get_header_image() ) : ?>

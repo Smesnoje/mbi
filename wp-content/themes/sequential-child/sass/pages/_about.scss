@@ -1,7 +1,24 @@
 .page-template-about {
 
+    .site-main {
+        border: 1px solid rgba($color-grey-dark, .2);
+        border-radius: 5px;
+        padding: 3.5rem 2rem 1rem 2rem;
+        box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); 
+        margin-bottom: 5rem;
+    }
+
     .content-area {
         width: 50vw!important;
+
+        @media screen and (max-width: 1020px) {
+            width: 75vw!important;
+            padding-top: 5rem!important;
+        }
+
+        @media screen and (max-width: 600px) {
+            width: 95vw!important;
+        }
     }
 
     .entry-meta {
@@ -10,10 +27,8 @@
     }
 
     article {
-        border: 1px solid rgba($color-grey-dark, .2);
-        border-radius: 5px;
-        padding: 3.5rem 2rem 1rem 2rem;
-        box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); 
+
+        margin-bottom: 0; 
         
         h3 {
             text-align: center;
@@ -41,7 +56,7 @@
 
     .entry-header {
         position: absolute;
-        top: -2rem;
+        top: -6rem;
         left: 50%;
         transform: translateX(-50%);
         z-index: 100;
@@ -63,5 +78,20 @@
 
     .entry-footer {
         display: none;
+    }
+
+    .location-title {
+        text-align: center;
+        text-transform: uppercase;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(to right, $color-secondary, $color-secondary-dark);
+    }
+
+    iframe {
+        margin: 0 auto;
+        margin-bottom: 5rem;
+        width: 97%;
+        box-shadow: 0 .5rem 3rem rgba(0, 0, 0, 0.2);
     }
 }
