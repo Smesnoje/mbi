@@ -9,7 +9,11 @@
 
 get_header(); ?>
 
-<?php
+<div class="cat-wrapper">
+    <h1 class="heading_primary"> Proizvodi </h1>
+        <div class="categories grid-container">
+        
+        <?php
 
 $taxonomy     = 'product_cat';
 $orderby      = 'name';  
@@ -34,10 +38,19 @@ foreach ($all_categories as $cat) {
       $category_id = $cat->term_id;   
       $thumbnail_id = get_woocommerce_term_meta( $category_id, 'thumbnail_id', true );   
       $image = wp_get_attachment_image_src( $thumbnail_id, 'medium' );
+      ?>
      
-      echo '<br /><a href="'. get_term_link($cat->slug, 'product_cat') .'">'. $cat->name .'</a>';
-      echo '<img src="' . $image[0] . '" alt="" />'; 
+       <div class="category grid-item">
+            <h2 class="category_title">
+                <?php echo '<a href="'. get_term_link($cat->slug, 'product_cat') .'">'. $cat->name .'</a>'; ?>
+            </h2>
+            <div class="category_image" style="background-image: url(<?php echo  $image[0] ?> )">
+            </div>
+       </div>
 
+
+
+<?php
       $args2 = array(
               'taxonomy'     => $taxonomy,
               'child_of'     => 0,
@@ -57,6 +70,8 @@ foreach ($all_categories as $cat) {
       }
   }       
 }?>
+        
+        </div>
+</div>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
