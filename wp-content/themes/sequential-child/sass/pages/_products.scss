@@ -70,7 +70,7 @@
         display: grid;
         grid-template-columns: 30% 30% 30%;
         grid-column-gap: 5%;
-        grid-row-gap: 3rem;
+        grid-row-gap: 5rem;
 
         @media screen and (max-width: 1020px) {
             grid-template-columns: 47.5% 47.5%;
@@ -92,6 +92,7 @@
 
     .category {
         box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+        border-radius: .5rem;
         display: flex;
         flex-direction: column-reverse;
 
