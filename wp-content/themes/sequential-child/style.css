@@ -403,7 +403,7 @@ h4 {
     position: absolute;
     bottom: 0; }
 
-.heading_primary {
+.heading_primary, .single-product .entry-title {
   font-size: 3.4rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -625,7 +625,7 @@ h4 {
 .page-template-category .content-area {
   width: 100% !important; }
 
-.page-template-category .heading_primary {
+.page-template-category .heading_primary, .page-template-category .single-product .entry-title, .single-product .page-template-category .entry-title {
   margin-top: 0; }
 
 .page-template-category .products {
@@ -768,3 +768,155 @@ h4 {
   #place_order:active, #place_order:focus {
     transform: translateY(-0.1rem);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2) !important; }
+
+.single-product .content-area {
+  width: 100% !important; }
+
+.single-product .entry-meta {
+  display: none; }
+
+.single-product .entry-title {
+  margin: 0 0 3rem 0; }
+
+.single-product .grid-container {
+  display: grid;
+  grid-template-columns: 45% 50%;
+  grid-template-rows: 30rem auto 40rem;
+  grid-column-gap: 5%;
+  grid-row-gap: 3rem; }
+
+.single-product .grid-item {
+  display: inline-grid; }
+
+.single-product .product_image {
+  grid-row-start: 1;
+  grid-row-end: 3; }
+  .single-product .product_image .woocommerce-product-gallery {
+    width: 100% !important;
+    max-height: 100% !important;
+    margin: 0 !important; }
+  .single-product .product_image .woocommerce-product-gallery__wrapper {
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); }
+
+.single-product .product_summary {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  width: 100% !important;
+  display: flex;
+  justify-content: space-around; }
+  .single-product .product_summary .price {
+    padding-top: 1.5rem;
+    font-size: 2.5rem !important;
+    text-align: center;
+    text-transform: uppercase;
+    color: transparent !important;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to right, #83c2bc, #33847B); }
+  .single-product .product_summary .cart .button {
+    height: 100%;
+    margin-left: 2rem;
+    background-color: #615f8b !important;
+    transition: all .2s; }
+    .single-product .product_summary .cart .button:hover {
+      transform: translateY(-0.2rem);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2) !important;
+      background-color: rgba(45, 43, 95, 0.8) !important; }
+    .single-product .product_summary .cart .button:active, .single-product .product_summary .cart .button:focus {
+      transform: translateY(-0.1rem);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2) !important; }
+  .single-product .product_summary .product_meta {
+    display: none; }
+
+.single-product .product_description {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  border: 1px solid rgba(51, 51, 51, 0.2);
+  border-radius: 5px;
+  padding: 2rem;
+  position: relative; }
+  .single-product .product_description h2 {
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    margin: 0;
+    transform: translateX(-50%);
+    padding: .5rem;
+    z-index: 1500;
+    background: #fff;
+    color: #83c2bc; }
+  .single-product .product_description .tabs {
+    display: none; }
+
+.single-product .product_related {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  position: relative;
+  padding: 3rem 3rem 0;
+  border-top: 1px solid rgba(51, 51, 51, 0.2); }
+  .single-product .product_related h2:not(.woocommerce-loop-product__title) {
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    margin: 0;
+    transform: translateX(-50%);
+    padding: .5rem;
+    z-index: 1500;
+    background: #fff;
+    color: #83c2bc; }
+  .single-product .product_related .products {
+    display: flex;
+    justify-content: space-evenly; }
+    .single-product .product_related .products .type-product {
+      margin: 0;
+      box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+      position: relative;
+      height: 80%; }
+      .single-product .product_related .products .type-product img {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        margin: 0; }
+      .single-product .product_related .products .type-product .woocommerce-loop-product__title {
+        position: absolute;
+        text-transform: uppercase;
+        top: 60%;
+        right: 1rem;
+        color: #fff;
+        background-image: linear-gradient(to right bottom, rgba(131, 194, 188, 0.85), rgba(51, 132, 123, 0.85)); }
+        @media screen and (max-width: 1230px) {
+          .single-product .product_related .products .type-product .woocommerce-loop-product__title {
+            top: 60%; } }
+      .single-product .product_related .products .type-product .price {
+        text-transform: uppercase;
+        position: absolute;
+        top: 73%;
+        right: 1rem;
+        color: #fff;
+        font-size: 1.8rem; }
+        .single-product .product_related .products .type-product .price .amount {
+          background-image: linear-gradient(to right bottom, rgba(131, 194, 188, 0.85), rgba(51, 132, 123, 0.85)); }
+        @media screen and (max-width: 1230px) {
+          .single-product .product_related .products .type-product .price {
+            top: 73%; } }
+      .single-product .product_related .products .type-product .button {
+        display: block;
+        margin: 1rem auto;
+        text-align: center;
+        width: 90%;
+        background-color: #615f8b !important;
+        transition: all .2s;
+        color: #fff; }
+        .single-product .product_related .products .type-product .button:hover {
+          transform: translateY(-0.2rem);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2) !important;
+          background-color: rgba(45, 43, 95, 0.8) !important; }
+        .single-product .product_related .products .type-product .button:active, .single-product .product_related .products .type-product .button:focus {
+          transform: translateY(-0.1rem);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2) !important; }
+      @media screen and (max-width: 1230px) {
+        .single-product .product_related .products .type-product {
+          height: 86%;
+          width: 30%; } }
+      @media screen and (max-width: 1020px) {
+        .single-product .product_related .products .type-product {
+          height: 91%;
+          width: 28%; } }
