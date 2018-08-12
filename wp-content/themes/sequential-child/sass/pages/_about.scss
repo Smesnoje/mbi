@@ -62,6 +62,10 @@
         z-index: 100;
         background: $color-white;
         padding: 0 2rem;
+
+        @media screen and (max-width:433px) {
+            top: -5.5rem;
+        }
     }
 
     .entry-title {
@@ -73,7 +77,9 @@
 
         @media screen and (max-width:433px) {
             font-size: 2.7rem;
+            width: 13rem;
         }
+
     }
 
     .entry-content {
