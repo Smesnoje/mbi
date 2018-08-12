@@ -44,8 +44,15 @@ body {
 .woocommerce-checkout .optional {
   display: none; }
 
-.post-navigation, .posted-on {
+.post-navigation,
+.posted-on {
   display: none; }
+
+.woocommerce .cart-empty {
+  color: transparent;
+  height: 0;
+  width: 0;
+  font-size: 0; }
 
 h1 {
   font-size: 3rem; }
