@@ -549,6 +549,9 @@ h4 {
   z-index: 100;
   background: #fff;
   padding: 0 2rem; }
+  @media screen and (max-width: 433px) {
+    .page-template-about .entry-header {
+      top: -5.5rem; } }
 
 .page-template-about .entry-title {
   text-align: center;
@@ -558,7 +561,8 @@ h4 {
   background-image: linear-gradient(to right, #83c2bc, #33847B); }
   @media screen and (max-width: 433px) {
     .page-template-about .entry-title {
-      font-size: 2.7rem; } }
+      font-size: 2.7rem;
+      width: 13rem; } }
 
 .page-template-about .entry-content {
   line-height: 1; }
@@ -784,6 +788,11 @@ h4 {
   grid-template-rows: 30rem auto 40rem;
   grid-column-gap: 5%;
   grid-row-gap: 3rem; }
+  @media screen and (max-width: 1020px) {
+    .single-product .grid-container {
+      grid-template-columns: 100%;
+      grid-template-rows: auto auto auto auto auto auto;
+      grid-row-gap: 5rem; } }
 
 .single-product .grid-item {
   display: inline-grid; }
@@ -797,6 +806,10 @@ h4 {
     margin: 0 !important; }
   .single-product .product_image .woocommerce-product-gallery__wrapper {
     box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); }
+  @media screen and (max-width: 1020px) {
+    .single-product .product_image {
+      grid-row-start: 1;
+      grid-row-end: 2; } }
 
 .single-product .product_summary {
   grid-row-start: 2;
@@ -804,6 +817,14 @@ h4 {
   width: 100% !important;
   display: flex;
   justify-content: space-around; }
+  @media screen and (max-width: 1020px) {
+    .single-product .product_summary {
+      grid-row-start: 3;
+      grid-row-end: 4; } }
+  @media screen and (max-width: 460px) {
+    .single-product .product_summary {
+      flex-direction: column;
+      align-items: center; } }
   .single-product .product_summary .price {
     padding-top: 1.5rem;
     font-size: 2.5rem !important;
@@ -812,6 +833,9 @@ h4 {
     color: transparent !important;
     -webkit-background-clip: text;
     background-image: linear-gradient(to right, #83c2bc, #33847B); }
+    @media screen and (max-width: 460px) {
+      .single-product .product_summary .price {
+        font-size: 2rem !important; } }
   .single-product .product_summary .cart .button {
     height: 100%;
     margin-left: 2rem;
@@ -824,6 +848,9 @@ h4 {
     .single-product .product_summary .cart .button:active, .single-product .product_summary .cart .button:focus {
       transform: translateY(-0.1rem);
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2) !important; }
+  @media screen and (max-width: 460px) {
+    .single-product .product_summary .cart .input-text {
+      padding: 0.5rem !important; } }
   .single-product .product_summary .product_meta {
     display: none; }
 
@@ -834,6 +861,10 @@ h4 {
   border-radius: 5px;
   padding: 2rem;
   position: relative; }
+  @media screen and (max-width: 1020px) {
+    .single-product .product_description {
+      grid-row-start: 2;
+      grid-row-end: 3; } }
   .single-product .product_description h2 {
     position: absolute;
     top: -2rem;
@@ -853,6 +884,14 @@ h4 {
   position: relative;
   padding: 3rem 3rem 0;
   border-top: 1px solid rgba(51, 51, 51, 0.2); }
+  @media screen and (max-width: 1020px) {
+    .single-product .product_related {
+      grid-row-start: 4;
+      grid-row-end: 5;
+      padding: 3rem 2.5rem 2rem 0; } }
+  @media screen and (max-width: 420px) {
+    .single-product .product_related {
+      padding: 3rem 2rem 2rem 0; } }
   .single-product .product_related h2:not(.woocommerce-loop-product__title) {
     position: absolute;
     top: -2rem;
@@ -861,16 +900,30 @@ h4 {
     transform: translateX(-50%);
     padding: .5rem;
     z-index: 1500;
+    width: 25rem;
     background: #fff;
     color: #83c2bc; }
   .single-product .product_related .products {
     display: flex;
-    justify-content: space-evenly; }
+    flex-wrap: wrap;
+    justify-content: center; }
+    @media screen and (max-width: 520px) {
+      .single-product .product_related .products {
+        flex-direction: column;
+        align-items: center; } }
     .single-product .product_related .products .type-product {
       margin: 0;
       box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
       position: relative;
       height: 80%; }
+      .single-product .product_related .products .type-product:not(:first-child) {
+        margin-left: 2rem; }
+        @media screen and (max-width: 520px) {
+          .single-product .product_related .products .type-product:not(:first-child) {
+            margin-left: 0 !important; } }
+      @media screen and (max-width: 520px) {
+        .single-product .product_related .products .type-product {
+          width: 75vw !important; } }
       .single-product .product_related .products .type-product img {
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
         clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
@@ -885,6 +938,18 @@ h4 {
         @media screen and (max-width: 1230px) {
           .single-product .product_related .products .type-product .woocommerce-loop-product__title {
             top: 60%; } }
+        @media screen and (max-width: 770px) {
+          .single-product .product_related .products .type-product .woocommerce-loop-product__title {
+            top: 68%; } }
+        @media screen and (max-width: 590px) {
+          .single-product .product_related .products .type-product .woocommerce-loop-product__title {
+            top: 66%; } }
+        @media screen and (max-width: 520px) {
+          .single-product .product_related .products .type-product .woocommerce-loop-product__title {
+            top: 70%; } }
+        @media screen and (max-width: 360px) {
+          .single-product .product_related .products .type-product .woocommerce-loop-product__title {
+            top: 66%; } }
       .single-product .product_related .products .type-product .price {
         text-transform: uppercase;
         position: absolute;
@@ -897,6 +962,18 @@ h4 {
         @media screen and (max-width: 1230px) {
           .single-product .product_related .products .type-product .price {
             top: 73%; } }
+        @media screen and (max-width: 770px) {
+          .single-product .product_related .products .type-product .price {
+            top: 77%; } }
+        @media screen and (max-width: 590px) {
+          .single-product .product_related .products .type-product .price {
+            top: 76%; } }
+        @media screen and (max-width: 520px) {
+          .single-product .product_related .products .type-product .price {
+            top: 78%; } }
+        @media screen and (max-width: 360px) {
+          .single-product .product_related .products .type-product .price {
+            top: 77%; } }
       .single-product .product_related .products .type-product .button {
         display: block;
         margin: 1rem auto;
