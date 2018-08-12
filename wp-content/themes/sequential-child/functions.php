@@ -173,7 +173,32 @@ function create_posttype() {
 add_action( 'init', 'create_posttype' );
 
 
+// Out of stock rename
+add_filter( 'woocommerce_get_availability', 'wcs_custom_get_availability', 1, 2);
+function wcs_custom_get_availability( $availability, $_product ) {
+    
+    // Change In Stock Text
+    if ( $_product->is_in_stock() ) {
+        $availability['availability'] = __('Na stanju', 'woocommerce');
+    }
+    // Change Out of Stock Text
+    if ( ! $_product->is_in_stock() ) {
+        $availability['availability'] = __('Artikla nema na stanju', 'woocommerce');
+    }
+    return $availability;
+}
+// Currency
+/**
+ * Change a currency symbol
+ */
+add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
 
+function change_existing_currency_symbol( $currency_symbol, $currency ) {
+     switch( $currency ) {
+          case 'RSD': $currency_symbol = ' RSD'; break;
+     }
+     return $currency_symbol;
+}
 
 
 
