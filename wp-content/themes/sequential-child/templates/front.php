@@ -34,8 +34,9 @@ get_header(); ?>
 get_header(); ?>
 
 
-  <script type="text/javascript" src="wp-content/themes/sequential-child/js/main.js"></script>
+  <script type="text/javascript" src="wp-content/themes/sequential-child/js/makeup.js"></script>
   <script type="text/javascript" src="wp-content/themes/sequential-child/js/aos.js"></script>
+  
   <script type="text/javascript">
     (function($) {
 	$(document).ready(function(){
