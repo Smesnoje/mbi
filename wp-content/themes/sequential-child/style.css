@@ -44,6 +44,9 @@ body {
 .woocommerce-checkout .optional {
   display: none; }
 
+.post-navigation, .posted-on {
+  display: none; }
+
 h1 {
   font-size: 3rem; }
 
