@@ -28,3 +28,21 @@ body {
     }
 }
 
+.woocommerce-order-received { 
+
+    .entry-header {
+        display: none!important;
+    }
+    .order-received {
+        text-align: center;
+        text-transform: uppercase;
+        width: 45rem;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(to right, $color-secondary, $color-secondary-dark);
+        color: transparent;
+        margin-bottom: 4rem;
+    }
+    .site-content {
+        height: 100vh;
+    }
+}

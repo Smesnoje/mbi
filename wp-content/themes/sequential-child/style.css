@@ -54,6 +54,21 @@ body {
   width: 0;
   font-size: 0; }
 
+.woocommerce-order-received .entry-header {
+  display: none !important; }
+
+.woocommerce-order-received .order-received {
+  text-align: center;
+  text-transform: uppercase;
+  width: 45rem;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #83c2bc, #33847B);
+  color: transparent;
+  margin-bottom: 4rem; }
+
+.woocommerce-order-received .site-content {
+  height: 100vh; }
+
 h1 {
   font-size: 3rem; }
 
