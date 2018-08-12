@@ -775,6 +775,26 @@ h4 {
     transform: translateY(-0.1rem);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2) !important; }
 
+.return {
+  margin-bottom: 4rem; }
+  .return_button {
+    display: block;
+    color: white;
+    padding: 2rem;
+    width: 20rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: #615f8b !important;
+    transition: all .2s; }
+    .return_button:hover {
+      transform: translateY(-0.2rem);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2) !important;
+      background-color: rgba(45, 43, 95, 0.8) !important;
+      color: #fff; }
+    .return_button:active, .return_button:focus {
+      transform: translateY(-0.1rem);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2) !important; }
+
 #place_order {
   background-color: #615f8b !important;
   transition: all .2s; }

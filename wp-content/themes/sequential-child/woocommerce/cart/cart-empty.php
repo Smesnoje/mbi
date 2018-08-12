@@ -27,5 +27,8 @@ wc_print_notices();
  */
 
 if ( wc_get_page_id( 'shop' ) > 0 ) : ?>
-	
+	<div class="return">
+		<p class="empty">vasa korpa je prazna</p>
+		<a href="proizvodi" class="return_button">Nastavi kupovinu</a>
+	</div>
 <?php endif; ?>
