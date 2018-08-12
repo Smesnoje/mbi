@@ -108,6 +108,12 @@
             width: 100%;
             height: 30rem;
             background-size: cover;
+
+            a {
+                height: 100%;
+                width: 100%;
+                display: block;
+            }
         }
     }
 }
