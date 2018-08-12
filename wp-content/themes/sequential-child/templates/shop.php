@@ -45,6 +45,7 @@ foreach ($all_categories as $cat) {
                 <?php echo '<a href="/mbi/kategorija?category='.$cat->name.'">'. $cat->name .'</a>'; ?>
             </h2>
             <div class="category_image" style="background-image: url(<?php echo  $image[0] ?> )">
+            <?php echo '<a href="/mbi/kategorija?category='.$cat->name.'">' .'</a>'; ?>
             </div>
        </div>
 
