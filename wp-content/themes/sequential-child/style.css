@@ -712,6 +712,9 @@ h4 {
 
 .premove {
   position: relative; }
+  @media screen and (max-width: 770px) {
+    .premove {
+      height: 6rem; } }
   .premove:before {
     content: "";
     display: block;
@@ -739,6 +742,9 @@ h4 {
   #remove-button:hover {
     background-color: transparent;
     color: white; }
+  @media screen and (max-width: 770px) {
+    #remove-button {
+      width: 5rem; } }
 
 .product-name a {
   border-bottom: none !important; }
