@@ -41,6 +41,9 @@ body {
   font-size: 1.6rem;
   overflow: hidden; }
 
+.woocommerce-checkout .optional {
+  display: none; }
+
 h1 {
   font-size: 3rem; }
 
