@@ -84,7 +84,7 @@ function wc_add_to_cart_message_filter($message, $product_id = null) {
                     esc_html( $added_text ),
                     esc_url( wc_get_page_permalink( 'checkout' ) ),
                     esc_html__( 'Na kasu', 'woocommerce' ),
-                    esc_url( wc_get_page_permalink( 'shop' ) ),
+                    esc_url( get_permalink( get_page_by_path( 'proizvodi' ) )),
                     esc_html__( 'Nastavi kupovinu', 'woocommerce' ));
 
     return $message;
@@ -181,12 +181,19 @@ add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10,
 
 function change_existing_currency_symbol( $currency_symbol, $currency ) {
      switch( $currency ) {
-          case 'RSD': $currency_symbol = ' RSD'; break;
+          case 'RSD': $currency_symbol = ' RSD.'; break;
      }
      return $currency_symbol;
 }
 
-
+// Cart totals renamed
+// Change Cart Totals
+// =============================================================================
+function change_cart_totals($translated) { 
+	$translated = str_ireplace('Cart Totals', 'Ukupna cena', $translated);
+	return $translated; 
+  }
+  add_filter('gettext', 'change_cart_totals' );
 
 
 
