@@ -837,7 +837,7 @@ h4 {
       .single-product .product_summary .price {
         font-size: 2rem !important; } }
   .single-product .product_summary .cart .button {
-    height: 100%;
+    height: 5rem;
     margin-left: 2rem;
     background-color: #615f8b !important;
     transition: all .2s; }
