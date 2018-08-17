@@ -69,6 +69,10 @@ body {
 .woocommerce-order-received .site-content {
   height: 100vh; }
 
+body {
+  font-family: 'Montserrat',sans-serif;
+  font-weight: 400; }
+
 h1 {
   font-size: 3rem; }
 
@@ -803,9 +807,10 @@ h4 {
 .return {
   margin-bottom: 4rem; }
   .return_button {
+    text-align: center;
     display: block;
     color: white;
-    padding: 2rem;
+    padding: 1rem;
     width: 20rem;
     text-transform: uppercase;
     border-radius: 5px;
@@ -930,7 +935,7 @@ h4 {
     margin: 0;
     transform: translateX(-50%);
     padding: .5rem;
-    z-index: 1500;
+    z-index: 500;
     background: #fff;
     color: #83c2bc; }
   .single-product .product_description .tabs {
