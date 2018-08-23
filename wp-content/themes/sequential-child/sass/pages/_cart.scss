@@ -125,3 +125,38 @@
         }
     }
 }
+
+.woocommerce-order-details {
+    display: flex;
+}
+
+.home-btn,
+.shop-btn {
+    text-align: center;
+    display: block;
+    color: white;
+    padding: 1rem;
+    width: 20rem;  
+    text-transform: uppercase;
+    border-radius: 5px;
+
+    background-color: $color-primary!important;
+    transition: all .2s;
+
+    &:hover {
+        transform: translateY(-.2rem);
+        box-shadow: 0 1rem 2rem rgba($color-black, .2)!important;
+        background-color: rgba($color-primary-dark, .8)!important;
+        color: $color-white;
+    }
+
+    &:active,
+    &:focus {
+        transform: translateY(-.1rem);
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2)!important;
+    }
+}
+
+.home-btn {
+    margin-right: .5rem;
+}

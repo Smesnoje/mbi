@@ -826,6 +826,35 @@ h4 {
       transform: translateY(-0.1rem);
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2) !important; }
 
+.woocommerce-order-details {
+  display: flex; }
+
+.home-btn,
+.shop-btn {
+  text-align: center;
+  display: block;
+  color: white;
+  padding: 1rem;
+  width: 20rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-color: #615f8b !important;
+  transition: all .2s; }
+  .home-btn:hover,
+  .shop-btn:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2) !important;
+    background-color: rgba(45, 43, 95, 0.8) !important;
+    color: #fff; }
+  .home-btn:active, .home-btn:focus,
+  .shop-btn:active,
+  .shop-btn:focus {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2) !important; }
+
+.home-btn {
+  margin-right: .5rem; }
+
 #place_order {
   background-color: #615f8b !important;
   transition: all .2s; }
