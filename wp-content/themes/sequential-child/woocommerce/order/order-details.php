@@ -38,9 +38,9 @@ if ( $show_downloads ) {
 
 
 
-	<a href="<?php echo get_home_url(); ?>"> Poćetna </a>
+	<a class="home-btn" href="<?php echo get_home_url(); ?>"> Poćetna </a>
 	
-	<a href="<?php echo get_home_url(); ?>/proizvodi"> Nastavi kupovinu </a>
+	<a class="shop-btn" href="<?php echo get_home_url(); ?>/proizvodi"> Nastavi kupovinu </a>
 
 	<?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
 </section>
