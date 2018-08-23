@@ -1,5 +1,9 @@
 <?php /* Template Name: 404 */ ?>
 
-<?php wp_redirect(get_site_url());
-exit;
+<?php 
+$home = get_site_url();
+
+header("Location:".$home);
+die();
+
 ?>
