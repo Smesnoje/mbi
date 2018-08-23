@@ -15,7 +15,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<link rel="stylesheet" href="http://localhost:8080/mbi/wp-content/themes/sequential-child/icon-font/icons.css">
+<link rel="stylesheet" href="http://skeemteam.org/mbi/wp-content/themes/sequential-child/icon-font/icons.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.css">
 
 
