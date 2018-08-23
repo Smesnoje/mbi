@@ -1,6 +1,5 @@
-<?php /* Template Name: 404 */ ?>
-
 <?php
-wp_redirect( get_home_url() );
-exit;
+header("HTTP/1.1 301 Moved Permanently");
+header("Location: ".get_bloginfo('url'));
+exit();
 ?>
