@@ -38,7 +38,7 @@ if ( $show_downloads ) {
 
 
 
-	<a href="<?php echo get_home_url(); ?>"> Poćetna </a>
+	<a href="<?php echo get_home_url(); ?>"> Početna </a>
 	
 	<a href="<?php echo get_home_url(); ?>/proizvodi"> Nastavi kupovinu </a>
 
