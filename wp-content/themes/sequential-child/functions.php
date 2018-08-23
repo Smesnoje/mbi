@@ -181,7 +181,7 @@ add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10,
 
 function change_existing_currency_symbol( $currency_symbol, $currency ) {
      switch( $currency ) {
-          case 'RSD': $currency_symbol = ' RSD.'; break;
+          case 'RSD': $currency_symbol = '‌‌&nbspRSD'; break;
      }
      return $currency_symbol;
 }
