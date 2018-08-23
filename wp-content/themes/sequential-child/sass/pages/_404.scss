@@ -1,0 +1,14 @@
+.error404 {
+
+    .site-main {
+        height: 100vh;
+        position: relative;
+    }
+
+    .warning-404 {
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        transform: translate(-50%, -50%);
+    }
+}
