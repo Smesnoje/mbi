@@ -50,7 +50,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 	<?php endif; ?>
 
-	<h3 id="order_review_heading"><?php _e( 'Vaša porudžbina', 'woocommerce' ); ?></h3>
+	<h3 id="order_review_heading"><?php _e( 'Your order', 'woocommerce' ); ?></h3>
 
 	<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 

@@ -1,21 +1,6 @@
-<?php /* Template Name: BasicPage */ ?>
+<?php /* Template Name: 404 */ ?>
 
 <?php
-/**
- * The template for displaying all single posts.
- *
- * @package Sequential
- */
-
-get_header(); ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-			
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+wp_redirect( get_home_url() );
+exit;
+?>

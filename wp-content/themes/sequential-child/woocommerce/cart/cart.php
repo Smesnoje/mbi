@@ -30,7 +30,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 				<th class="product-remove">&nbsp;</th>
 				<th class="product-name"><?php esc_html_e( 'Produkt', 'woocommerce' ); ?></th>
 				<th class="product-price"><?php esc_html_e( 'Cena', 'woocommerce' ); ?></th>
-				<th class="product-quantity"><?php esc_html_e( 'Kolicina', 'woocommerce' ); ?></th>
+				<th class="product-quantity"><?php esc_html_e( 'Količina', 'woocommerce' ); ?></th>
 				<th class="product-subtotal"><?php esc_html_e( 'Ukupno', 'woocommerce' ); ?></th>
 			</tr>
 		</thead>
