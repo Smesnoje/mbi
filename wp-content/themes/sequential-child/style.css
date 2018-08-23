@@ -740,6 +740,9 @@ h4 {
 .page-template-category .grid-item {
   display: inline-grid; }
 
+.woocommerce-cart .site-content {
+  height: 100vh; }
+
 .shop_table {
   box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
   margin-bottom: 4rem !important; }
