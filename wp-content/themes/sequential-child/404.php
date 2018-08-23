@@ -1,6 +1,4 @@
 <?php /* Template Name: 404 */ ?>
 
 <?php
-wp_redirect( get_site_url() );
-exit;
-?>
+wp_redirect( get_site_url() );?>
