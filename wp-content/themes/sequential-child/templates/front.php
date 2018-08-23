@@ -133,9 +133,9 @@ get_header(); ?>
 						<div class="section_image "style="background-image: url(<?php the_post_thumbnail_url( $size ); ?> )"></div>
 						<div class="section_content">
 							<div class="section_text">
-								<a href="<?php the_permalink(); ?>" class="section_title"> 
+								<h4 href="<?php the_permalink(); ?>" class="section_title"> 
 									<?php the_title(); ?>
-								</a>
+								</h4>
 								<?php the_content(); ?>
 							</div>
 						</div>
