@@ -21,15 +21,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-$mailer = WC()->mailer();
-$mails = $mailer->get_emails();
-if ( ! empty( $mails ) ) {
-    foreach ( $mails as $mail ) {
-        if ( $mail->id == 'customer_completed_order' ) {
-           $mail->trigger( $order->id );
-        }
-     }
-}
+
 ?>
 
 
@@ -87,7 +79,17 @@ if ( ! empty( $mails ) ) {
 
 		<?php endif; ?>
 
-		<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?>
+		<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); 
+		$mailer = WC()->mailer();
+		$mails = $mailer->get_emails();
+		if ( ! empty( $mails ) ) {
+			foreach ( $mails as $mail ) {
+				if ( $mail->id == 'customer_completed_order' ) {
+				   $mail->trigger( $order->id );
+				}
+			 }
+		}
+		?>
 		<?php do_action( 'woocommerce_thankyou', $order->get_id() ); ?>
 
 	<?php else : ?>
