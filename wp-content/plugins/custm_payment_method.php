@@ -101,10 +101,7 @@ function init_custom_gateway_class(){
         /**
          * Output for the order received page.
          */
-        public function thankyou_page() {
-            if ( $this->instructions )
-                echo wpautop( wptexturize( $this->instructions ) );
-        }
+        
 
         /**
          * Add content to the WC emails.
