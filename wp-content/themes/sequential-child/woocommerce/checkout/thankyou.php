@@ -70,7 +70,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</li>
 
 				<?php if ( $order->get_payment_method_title() ) : ?>
-				<?php if ($order->get_payment_method_title() =="Slanje poštom" ):?>
+			
+					<li class="woocommerce-order-overview__payment-method method">
+						<?php _e( 'Način preuzimanja', 'woocommerce' ); ?>
+						<strong><?php echo wp_kses_post( $order->get_payment_method_title() ); ?></strong>
+					</li>
+				<?php endif; ?>
+
+			</ul>
+
+		<?php endif; ?>
+
+		
+		<?php do_action( 'woocommerce_thankyou', $order->get_id() ); ?>
+
+	<?php else : ?>
+
+		<p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), null ); ?></p>
+
+	<?php endif; ?>
+	<?php if ($order->get_payment_method_title() =="Slanje poštom" ):?>
 				<?php 
 							// If page is refreshed, redirect
 							$pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
@@ -91,24 +110,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 									}
 								}?>
 				<?php endif; ?>
-					<li class="woocommerce-order-overview__payment-method method">
-						<?php _e( 'Način preuzimanja', 'woocommerce' ); ?>
-						<strong><?php echo wp_kses_post( $order->get_payment_method_title() ); ?></strong>
-					</li>
-				<?php endif; ?>
-
-			</ul>
-
-		<?php endif; ?>
-
-		
-		<?php do_action( 'woocommerce_thankyou', $order->get_id() ); ?>
-
-	<?php else : ?>
-
-		<p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), null ); ?></p>
-
-	<?php endif; ?>
 
 </div>
 
