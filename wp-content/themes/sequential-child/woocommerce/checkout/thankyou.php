@@ -22,6 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+
 ?>
 
 
@@ -89,6 +90,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				}
 			 }
 		}
+		// If page is refreshed, redirect
+		$pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
+
+			if($pageWasRefreshed ) {
+				wp_redirect( home_url( 'proizvodi' ) );
+				//do something because page was refreshed;
+			}
 		?>
 		<?php do_action( 'woocommerce_thankyou', $order->get_id() ); ?>
 
