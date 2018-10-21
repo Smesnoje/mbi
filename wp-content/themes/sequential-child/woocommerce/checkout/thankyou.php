@@ -21,6 +21,15 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+$mailer = WC()->mailer();
+$mails = $mailer->get_emails();
+if ( ! empty( $mails ) ) {
+    foreach ( $mails as $mail ) {
+        if ( $mail->id == 'customer_completed_order' ) {
+           $mail->trigger( $order->id );
+        }
+     }
+}
 ?>
 
 

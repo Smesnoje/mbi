@@ -116,15 +116,6 @@ function init_custom_gateway_class(){
          */
         public function email_instructions( $order, $sent_to_admin, $plain_text = false ) {
             if ( $this->instructions && ! $sent_to_admin && 'custom' === $order->payment_method && $order->has_status( 'on-hold' ) ) {
-                $mailer = WC()->mailer();
-                        $mails = $mailer->get_emails();
-                        if ( ! empty( $mails ) ) {
-                            foreach ( $mails as $mail ) {
-                                if ( $mail->id == 'customer_completed_order' ) {
-                                $mail->trigger( $order->id );
-                                }
-                            }
-                        }
                 echo wpautop( wptexturize( $this->instructions ) ) . PHP_EOL;
             }
         }
