@@ -80,23 +80,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php endif; ?>
 
-		<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); 
-		$mailer = WC()->mailer();
-		$mails = $mailer->get_emails();
-		if ( ! empty( $mails ) ) {
-			foreach ( $mails as $mail ) {
-				if ( $mail->id == 'customer_completed_order' ) {
-				   $mail->trigger( $order->id );
-				}
-			 }
-		}
-		// If page is refreshed, redirect
-		$pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
+		<?php 
+				// If page is refreshed, redirect
+			$pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
 
-			if($pageWasRefreshed ) {
-				wp_redirect( home_url( 'proizvodi' ) );
-				//do something because page was refreshed;
-			}
+				if($pageWasRefreshed ) {
+					wp_redirect( home_url( 'proizvodi' ) );
+					//do something because page was refreshed;
+				}
+				
+				// force mail trigger
+				do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); 
+				$mailer = WC()->mailer();
+				$mails = $mailer->get_emails();
+				if ( ! empty( $mails ) ) {
+					foreach ( $mails as $mail ) {
+						if ( $mail->id == 'customer_completed_order' ) {
+						$mail->trigger( $order->id );
+						}
+					}
+				}
 		?>
 		<?php do_action( 'woocommerce_thankyou', $order->get_id() ); ?>
 
