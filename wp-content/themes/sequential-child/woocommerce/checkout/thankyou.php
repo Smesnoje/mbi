@@ -86,7 +86,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				if($pageWasRefreshed ) {
 					wp_redirect( home_url( 'proizvodi' ) );
+					die();
 					//do something because page was refreshed;
+				
 				}
 				
 				// force mail trigger
