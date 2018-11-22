@@ -1,10 +1,10 @@
 @font-face {
     font-family: "icons";
-    src: url("./icons.eot?acf3c8582fe28cbc86ae7d2b5c4b53f9?#iefix") format("embedded-opentype"),
-url("./icons.woff2?acf3c8582fe28cbc86ae7d2b5c4b53f9") format("woff2"),
-url("./icons.woff?acf3c8582fe28cbc86ae7d2b5c4b53f9") format("woff"),
-url("./icons.ttf?acf3c8582fe28cbc86ae7d2b5c4b53f9") format("truetype"),
-url("./icons.svg?acf3c8582fe28cbc86ae7d2b5c4b53f9#icons") format("svg");
+    src: url("./icons.eot?340a0aff58d1ee35999a09fac1a17daf?#iefix") format("embedded-opentype"),
+url("./icons.woff2?340a0aff58d1ee35999a09fac1a17daf") format("woff2"),
+url("./icons.woff?340a0aff58d1ee35999a09fac1a17daf") format("woff"),
+url("./icons.ttf?340a0aff58d1ee35999a09fac1a17daf") format("truetype"),
+url("./icons.svg?340a0aff58d1ee35999a09fac1a17daf#icons") format("svg");
 }
 
 i {
@@ -24,4 +24,7 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 
 .icon-001-garden:before {
     content: "\f101";
+}
+.icon-mobi:before {
+    content: "\f102";
 }

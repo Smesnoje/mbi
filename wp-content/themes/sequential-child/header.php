@@ -15,7 +15,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<link rel="stylesheet" href="http://skeemteam.org/mbi/wp-content/themes/sequential-child/icon-font/icons.css">
+<link rel="stylesheet" href="http://localhost/mbi/wp-content/themes/sequential-child/icon-font/icons.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.css">
 
 
@@ -40,7 +40,7 @@
 		<div class="wrapper">
 			<div class="site-branding">
 				<?php sequential_the_site_logo(); ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><i class="icon-001-garden"></i><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><div class="mobi-logo" style="background-image: url(http://localhost/mbi/wp-content/uploads/2018/06/mobi2.png )"><i class= "icon-mobi"></i></div><?php bloginfo( 'name' ); ?></a></h1>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</div>
 

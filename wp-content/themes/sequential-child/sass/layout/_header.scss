@@ -10,9 +10,30 @@
         padding: 1.3rem;
         display: flex;
 
-        i {
-            font-size: 5rem;
+        .site-title {
+            
+            @media screen and (max-width: 600px) {
+                font-size: 2.5rem;
+                line-height: 5.1rem;
+            }
+        }
+
+        .mobi-logo {
             margin-right: 1rem;
+            background-size: cover;
+            height: 6rem;
+            width: 8rem; 
+            position: relative;
+
+            i {
+                font-size: 8rem;
+
+                &:before {
+                    position: absolute;
+                    top: -15%;
+                    left: -20.5%;
+                }
+            }
         }
 
         a {
