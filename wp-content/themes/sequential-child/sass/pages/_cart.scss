@@ -163,26 +163,32 @@
 
 .shop_table_responsive {
 
-    .product-name::before {
-        content:"Produkt"!important;
-    }
-
-    .product-price::before {
-        content:"Cena"!important;
-    }
-
-    .product-quantity::before {
-        content:"Količina"!important;
-    }
-
-    .product-subtotal::before {
-        content:"Ukupno"!important;
-    }
-
-    .order-total {
+    @media screen and (max-width: 769px) {
         
-        td::before {
+        .product-name::before {
+            content:"Produkt"!important;
+        }
+    
+        .product-price::before {
+            content:"Cena"!important;
+        }
+    
+        .product-quantity::before {
+            content:"Količina"!important;
+        }
+    
+        .product-subtotal::before {
             content:"Ukupno"!important;
         }
+    
+        .order-total {
+            
+            td::before {
+                content:"Ukupno"!important;
+            }
+        }
+
     }
+
+
 }

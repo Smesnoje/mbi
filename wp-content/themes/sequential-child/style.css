@@ -869,20 +869,17 @@ h4 {
 .home-btn {
   margin-right: .5rem; }
 
-.shop_table_responsive .product-name::before {
-  content: "Produkt" !important; }
-
-.shop_table_responsive .product-price::before {
-  content: "Cena" !important; }
-
-.shop_table_responsive .product-quantity::before {
-  content: "Količina" !important; }
-
-.shop_table_responsive .product-subtotal::before {
-  content: "Ukupno" !important; }
-
-.shop_table_responsive .order-total td::before {
-  content: "Ukupno" !important; }
+@media screen and (max-width: 769px) {
+  .shop_table_responsive .product-name::before {
+    content: "Produkt" !important; }
+  .shop_table_responsive .product-price::before {
+    content: "Cena" !important; }
+  .shop_table_responsive .product-quantity::before {
+    content: "Količina" !important; }
+  .shop_table_responsive .product-subtotal::before {
+    content: "Ukupno" !important; }
+  .shop_table_responsive .order-total td::before {
+    content: "Ukupno" !important; } }
 
 #place_order {
   background-color: #615f8b !important;
