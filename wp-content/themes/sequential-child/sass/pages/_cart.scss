@@ -160,3 +160,29 @@
 .home-btn {
     margin-right: .5rem;
 }
+
+.shop_table_responsive {
+
+    .product-name::before {
+        content:"Produkt"!important;
+    }
+
+    .product-price::before {
+        content:"Cena"!important;
+    }
+
+    .product-quantity::before {
+        content:"Količina"!important;
+    }
+
+    .product-subtotal::before {
+        content:"Ukupno"!important;
+    }
+
+    .order-total {
+        
+        td::before {
+            content:"Ukupno"!important;
+        }
+    }
+}
